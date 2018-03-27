@@ -19,6 +19,9 @@ import {
 } from 'react-navigation';
 
 import MineClass from './TronClass/MineClass/MineClass'
+import ClassHome from './TronClass/MineClass/Class/ClassHome'
+import ClassNotification from './TronClass/MineClass/Class/ClassNotification'
+import ClassDiscussArea from './TronClass/MineClass/Class/ClassDiscussArea'
 import Discover from './TronClass/Discover/Discover'
 import Activity from './TronClass/Activity/Activity'
 import Me from './TronClass/Me/Me'
@@ -158,6 +161,9 @@ const Tab = TabNavigator({
 const Navi = StackNavigator(
 	{
 	  Tab: {screen: Tab},
+	  ClassHome: {screen: ClassHome},
+	  ClassNotification: {screen: ClassNotification},
+	  ClassDiscussArea: {screen: ClassDiscussArea},
 	},
 	{
 	  navigationOptions:{
