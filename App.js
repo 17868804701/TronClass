@@ -25,6 +25,7 @@ import ClassDiscussArea from './TronClass/MineClass/Class/ClassDiscussArea'
 import Discover from './TronClass/Discover/Discover'
 import Activity from './TronClass/Activity/Activity'
 import Me from './TronClass/Me/Me'
+import EditInfo from "./TronClass/Me/EditInfo";
 
 const Tab = TabNavigator({
   //每一个页面的配置
@@ -161,9 +162,11 @@ const Tab = TabNavigator({
 const Navi = StackNavigator(
 	{
 	  Tab: {screen: Tab},
+
 	  ClassHome: {screen: ClassHome},
 	  ClassNotification: {screen: ClassNotification},
 	  ClassDiscussArea: {screen: ClassDiscussArea},
+		editInfo:{screen:EditInfo},
 	},
 	{
 	  navigationOptions:{
