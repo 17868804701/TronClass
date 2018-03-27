@@ -36,16 +36,16 @@ export default class Me extends Component<Props> {
                                source={require('../Configure/Resource/right.png')}/>
                     </View>
                 </TouchableHighlight>
-                <ImageText text="私信" imgPath='mipmap/sixin' OnClickListener={() => {
+                <ImageText text="私信" imgPath='sixin' OnClickListener={() => {
                     alert('你点击了私信')
                 }}></ImageText>
-                <ImageText text="下载管理" imgPath='mipmap/xiazai' OnClickListener={() => {
+                <ImageText text="下载管理" imgPath='xiazai' OnClickListener={() => {
                     alert('你点击了')
                 }}></ImageText>
-                <ImageText text="反馈" imgPath='mipmap/tuichu1' OnClickListener={() => {
+                <ImageText text="反馈" imgPath='tuichu1' OnClickListener={() => {
                     alert('你点击了确定')
                 }}></ImageText>
-                <ImageText text="关于" imgPath='mipmap/guanyu' OnClickListener={() => {
+                <ImageText text="关于" imgPath='guanyu' OnClickListener={() => {
                     alert('你点击了确定')
                 }}></ImageText>
                 {/*退出按钮*/}
