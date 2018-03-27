@@ -12,12 +12,12 @@ import {
 } from 'react-native';
 
 type Props = {};
-export default class ClassDiscussArea extends Component<Props> {
+export default class ClassExamination extends Component<Props> {
   render() {
 	return (
 		<View style={styles.container}>
 		  <Text style={styles.welcome}>
-			
+			测试
 		  </Text>
 		</View>
 	);
