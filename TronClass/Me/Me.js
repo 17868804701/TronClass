@@ -3,13 +3,7 @@
  */
 
 import React, {Component} from 'react';
-import {
-    StyleSheet,
-    Text,
-    View,
-    Image,
-    Dimensions, TouchableHighlight
-} from 'react-native';
+import {Dimensions, Image, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 import ImageText from "./Component/ImageText";
 
 type Props = {};
@@ -37,16 +31,16 @@ export default class Me extends Component<Props> {
                     </View>
                 </TouchableHighlight>
                 <ImageText text="私信" imgPath='sixin' OnClickListener={() => {
-                    alert('你点击了私信')
+                    this.props.navigation.navigate('siXin')
                 }}></ImageText>
                 <ImageText text="下载管理" imgPath='xiazai' OnClickListener={() => {
-                    alert('你点击了')
+                    this.props.navigation.navigate('loadManager')
                 }}></ImageText>
                 <ImageText text="反馈" imgPath='tuichu1' OnClickListener={() => {
-                    alert('你点击了确定')
+                    this.props.navigation.navigate('yjfk')
                 }}></ImageText>
                 <ImageText text="关于" imgPath='guanyu' OnClickListener={() => {
-                    alert('你点击了确定')
+                    this.props.navigation.navigate('aboutCk')
                 }}></ImageText>
                 {/*退出按钮*/}
                 <TouchableHighlight
