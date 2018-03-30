@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Dimensions, Image, StyleSheet, TextInput, View} from "react-native";
+import {Dimensions, Image, StyleSheet, Text, TextInput, View} from "react-native";
 
-var {width} = Dimensions.get('window').width;
+let {width} = Dimensions.get('window').width;
 export default class Sixin extends Component {
     static navigationOptions = {
         headerTitle: '私信',
@@ -20,6 +20,11 @@ export default class Sixin extends Component {
                         underlineColorAndroid={'transparent'}/>
                 </View>
                 <View style={{height: 1, width: width, backgroundColor: '#555555'}}/>
+                <View style={{flex:1,backgroundColor:'#f0f0f0',justifyContent:'center',alignItems:'center'}}>
+                    <Image style={{width:60,height:60}} source={require('./Img/icon-topic.png')}>
+                    </Image>
+                    <Text style={{marginTop:10}}>暂无私信</Text>
+                </View>
             </View>
         );
     }
