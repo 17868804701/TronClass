@@ -26,6 +26,9 @@ import Discover from './TronClass/Discover/Discover'
 import Activity from './TronClass/Activity/Activity'
 import Me from './TronClass/Me/Me'
 import EditInfo from "./TronClass/Me/EditInfo";
+import Sixin from "./TronClass/Me/Sixin";
+import Yjfk from "./TronClass/Me/Yjfk";
+import AboutCk from "./TronClass/Me/AboutCk";
 
 const Tab = TabNavigator({
   //每一个页面的配置
@@ -167,6 +170,9 @@ const Navi = StackNavigator(
 	  ClassNotification: {screen: ClassNotification},
 	  ClassDiscussArea: {screen: ClassDiscussArea},
 		editInfo:{screen:EditInfo},
+		siXin:{screen:Sixin},
+		yjfk:{screen:Yjfk},
+		aboutCk:{screen:AboutCk},
 	},
 	{
 	  navigationOptions:{
