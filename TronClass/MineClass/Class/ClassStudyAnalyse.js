@@ -94,7 +94,7 @@ export default class ClassStudyAnalyse extends Component<Props> {
 	  key: '5'
 	});
 	itemArray.push({
-	  iconPath: 'homeWork',
+	  iconPath: 'homework',
 	  count: '4',
 	  countName: '作业交付数',
 	  time: '9',
