@@ -26,7 +26,6 @@ export default class Gonggao extends Component {
 
     render() {
         var data = [];
-
         data.push({key: 1, title: '公告发布', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
         data.push({key: 1, title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】更新公告', gTitle: '学前必读：有关课程的特别说明！！！'});
         data.push({key: 1, title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '有关课程的特别说明'});
@@ -95,7 +94,8 @@ export default class Gonggao extends Component {
         );
     }
     _onItemClick(item) {
-        // alert(item.item.context)
+
+        alert(item.item.context)
     }
     _header = () => {
         return <Text style={[styles.txt, {backgroundColor: 'black'}]}>这是头部</Text>;
