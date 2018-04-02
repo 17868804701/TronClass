@@ -15,7 +15,7 @@ import HtmlDes from "./HtmlDes";
 type Props = {};
 export default class Activity extends Component<Props> {
     render(){
-        return(<Navigator/>);
+        return(<Tab/>);
     }
 }
 
