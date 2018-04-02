@@ -10,6 +10,7 @@ import Zuoye from "./Zuoye";
 import Ceshi from "./Ceshi";
 import Taolun from "./Taolun";
 import Qita from "./Qita";
+import HtmlDes from "./HtmlDes";
 
 type Props = {};
 export default class Activity extends Component<Props> {
@@ -83,6 +84,9 @@ const Tab=TabNavigator(TabRoutConfigs,TabNavigatorConfigs);
 const StackRouteConfigs={
     Tab:{
         screen:Tab,
+    },
+    htmlDes:{
+        screen:HtmlDes,
     }
 };
 //导航器配置

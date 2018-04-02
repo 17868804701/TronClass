@@ -178,7 +178,7 @@ const Navi = StackNavigator(
         siXin: {screen: Sixin},
         yjfk: {screen: Yjfk},
         aboutCk: {screen: AboutCk},
-        loadManager: {screen: DownloadManage}
+        loadManager: {screen: DownloadManage},
     },
     {
         navigationOptions: {

@@ -94,8 +94,8 @@ export default class Gonggao extends Component {
         );
     }
     _onItemClick(item) {
-
-        alert(item.item.context)
+        // alert(item.item.context)
+        this.props.navigation.navigate('htmlDes')
     }
     _header = () => {
         return <Text style={[styles.txt, {backgroundColor: 'black'}]}>这是头部</Text>;
