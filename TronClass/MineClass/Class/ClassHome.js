@@ -124,6 +124,9 @@ export default class ClassHome extends Component<Props> {
 	  return;
 	}else if (data == '学习分析') {
 	  this.props.navigation.navigate('ClassStudyAnalyse', {title:data})
+	}else if (data == '课程信息') {
+      console.log(this.props.navigation);
+	  this.props.navigation.navigate('ClassInfo', {ClassItem: this.props.navigation.state.params.ClassItem})
 	}else{
       return;
 	}

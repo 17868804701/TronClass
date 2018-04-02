@@ -23,6 +23,7 @@ import ClassHome from './TronClass/MineClass/Class/ClassHome'
 import ClassNotification from './TronClass/MineClass/Class/ClassNotification'
 import ClassDiscussArea from './TronClass/MineClass/Class/ClassDiscussArea'
 import ClassStudyAnalyse from './TronClass/MineClass/Class/ClassStudyAnalyse'
+import ClassInfo from './TronClass/MineClass/Class/ClassInfo'
 import Discover from './TronClass/Discover/Discover'
 import Activity from './TronClass/Activity/Activity'
 import Me from './TronClass/Me/Me'
@@ -168,6 +169,7 @@ const Navi = StackNavigator(
 	  ClassNotification: {screen: ClassNotification},
 	  ClassDiscussArea: {screen: ClassDiscussArea},
 	  ClassStudyAnalyse: {screen: ClassStudyAnalyse},
+	  ClassInfo: {screen: ClassInfo},
 	  editInfo:{screen:EditInfo},
 	},
 	{
