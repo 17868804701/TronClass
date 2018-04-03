@@ -13,7 +13,7 @@ export default class DownloadManage extends Component{
         headerTitle: '下载管理',
     };
     render(){
-        return(<Navigator/>);
+        return(<Tab/>);
     }
 }
 

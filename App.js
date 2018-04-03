@@ -180,9 +180,6 @@ const Navi = StackNavigator(
         yjfk: {screen: Yjfk},
         aboutCk: {screen: AboutCk},
         loadManager: {screen: DownloadManage},
-        HtmlDes:{
-            screen:HtmlDes,
-        }
     },
     {
         navigationOptions: {
