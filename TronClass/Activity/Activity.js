@@ -32,7 +32,6 @@ export default class Activity extends Component<Props> {
   }
   
     render(){
-      
       console.log(this.props.navigation);
         return(
 			<ScrollableTabView
@@ -40,14 +39,20 @@ export default class Activity extends Component<Props> {
 				scrollWithoutAnimation={true}
 				initialPage={0}
 			>
+			  <Gonggao
+				  tabLabel='全部'
+				  clickCallBack={(item)=>{this.pushVC(item)}}
+			  />
+			  
 			  <View tabLabel='Tab1'>
-				<TouchableOpacity onPress={this.pushVC(...this.props)}>
+				<TouchableOpacity onPress={this.pushVC.bind(this)}>
 				  <Text>
 					sdfklajdlskfjklasdfa
 				  </Text>
 				</TouchableOpacity>
 				
 			  </View>
+			  
 			  
 			  <Text tabLabel='Tab2'/>
 			  <Text tabLabel='Tab3'/>
@@ -58,9 +63,8 @@ export default class Activity extends Component<Props> {
 		);
     }
   
-  pushVC(navigation) {
-      let {title} = {...this.props};
-      console.log(navigation);
+  pushVC(item) {
+      // console.log(item);
 	this.props.navigation.navigate('ClassHome', {ClassItem: 'haha'})
   }
 }

@@ -8,6 +8,7 @@ var {width} = Dimensions.get('window').width;
 export default class Gonggao extends Component {
     constructor(props) {
         super(props);
+        this.props.clickCallBack=null;
         console.log(this.props.navigation);
     }
   
@@ -102,7 +103,7 @@ export default class Gonggao extends Component {
 
         // alert(item.item.context);
         console.log(this.props.navigation);
-        this.props.navigation.navigate('ClassStudyAnalyse');
+        this.props.clickCallBack(item);
     }
     _header = () => {
         return <Text style={[styles.txt, {backgroundColor: 'black'}]}>这是头部</Text>;
