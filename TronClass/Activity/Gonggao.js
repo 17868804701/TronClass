@@ -8,7 +8,12 @@ var {width} = Dimensions.get('window').width;
 export default class Gonggao extends Component {
     constructor(props) {
         super(props);
+        console.log(this.props.navigation);
     }
+  
+  static navigationOptions = ({navigation}) => ({
+	
+  });
 
     refreshing() {
         let timer = setTimeout(() => {
@@ -26,17 +31,17 @@ export default class Gonggao extends Component {
 
     render() {
         var data = [];
-        data.push({key: 1, title: '公告发布', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: 1, title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】更新公告', gTitle: '学前必读：有关课程的特别说明！！！'});
-        data.push({key: 1, title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '有关课程的特别说明'});
-        data.push({key: 1, title: '公告发布', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '2017级统招新生转专业通知'});
-        data.push({key: 1, title: '公告发布', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '关于暑期网络选修课的特别说明'});
-        data.push({key: 1, title: '公告发布', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '2017学年第一学期暑假网络课程选课事宜'});
-        data.push({key: 1, title: '公告发布', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: 1, title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: 1, title: '公告发布', time: '02.07 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: 1, title: '公告更新', time: '02.05 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: 1, title: '公告发布', time: '02.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
+        data.push({key: '1', title: '公告发布', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
+        data.push({key: '2', title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】更新公告', gTitle: '学前必读：有关课程的特别说明！！！'});
+        data.push({key: '3', title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '有关课程的特别说明'});
+        data.push({key: '4', title: '公告发布', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '2017级统招新生转专业通知'});
+        data.push({key: '5', title: '公告发布', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '关于暑期网络选修课的特别说明'});
+        data.push({key: '6', title: '公告发布', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '2017学年第一学期暑假网络课程选课事宜'});
+        data.push({key: '7', title: '公告发布', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
+        data.push({key: '8', title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
+        data.push({key: '9', title: '公告发布', time: '02.07 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
+        data.push({key: '10', title: '公告更新', time: '02.05 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
+        data.push({key: '11', title: '公告发布', time: '02.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
         return (
             <View style={{flex: 1,}}>
                 {/*<Button title='滚动到指定位置'*/}
@@ -95,7 +100,9 @@ export default class Gonggao extends Component {
     }
     _onItemClick(item) {
 
-        alert(item.item.context)
+        // alert(item.item.context);
+        console.log(this.props.navigation);
+        this.props.navigation.navigate('ClassStudyAnalyse');
     }
     _header = () => {
         return <Text style={[styles.txt, {backgroundColor: 'black'}]}>这是头部</Text>;

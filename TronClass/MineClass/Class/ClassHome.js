@@ -121,7 +121,7 @@ export default class ClassHome extends Component<Props> {
 	} else if (data == '讨论') {
 	  this.props.navigation.navigate('ClassDiscussArea', {title:data})
 	} else if (data == '测试') {
-	  return;
+	  this.props.navigation.navigate('ClassExamination', {title:data})
 	}else if (data == '学习分析') {
 	  this.props.navigation.navigate('ClassStudyAnalyse', {title:data})
 	}else if (data == '课程信息') {

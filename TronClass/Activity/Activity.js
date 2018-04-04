@@ -3,6 +3,16 @@
  */
 
 import React, {Component} from 'react';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  SectionList
+} from 'react-native';
+
 import TabNavigator from "react-navigation/src/navigators/TabNavigator";
 import StackNavigator from "react-navigation/src/navigators/StackNavigator";
 import Gonggao from "./Gonggao";
@@ -10,12 +20,49 @@ import Zuoye from "./Zuoye";
 import Ceshi from "./Ceshi";
 import Taolun from "./Taolun";
 import Qita from "./Qita";
+import ScrollableTabView, {DefaultTabBar, ScrollableTabBar} from 'react-native-scrollable-tab-view';
 
 type Props = {};
 export default class Activity extends Component<Props> {
+  
+  constructor(props){
+	super(props);
+	this.state = {
+	}
+  }
+  
     render(){
-        return(<Navigator/>);
+      
+      console.log(this.props.navigation);
+        return(
+			<ScrollableTabView
+				renderTabBar={() => <DefaultTabBar/>}
+				scrollWithoutAnimation={true}
+				initialPage={0}
+			>
+			  <View tabLabel='Tab1'>
+				<TouchableOpacity onPress={this.pushVC(...this.props)}>
+				  <Text>
+					sdfklajdlskfjklasdfa
+				  </Text>
+				</TouchableOpacity>
+				
+			  </View>
+			  
+			  <Text tabLabel='Tab2'/>
+			  <Text tabLabel='Tab3'/>
+			  <Text tabLabel='Tab4'/>
+			  <Text tabLabel='Tab5'/>
+			  <Text tabLabel='Tab6'/>
+			</ScrollableTabView>
+		);
     }
+  
+  pushVC(navigation) {
+      let {title} = {...this.props};
+      console.log(navigation);
+	this.props.navigation.navigate('ClassHome', {ClassItem: 'haha'})
+  }
 }
 
 const TabRoutConfigs={
