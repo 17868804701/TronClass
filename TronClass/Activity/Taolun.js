@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Dimensions, FlatList, Image, StyleSheet, Text, TextInput, View} from "react-native";
+import {Dimensions, FlatList, Image, StyleSheet, Text, TextInput, TouchableHighlight, View} from "react-native";
 
 var {width} = Dimensions.get('window').width;
 export default class Taolun extends Component {
@@ -64,6 +64,10 @@ export default class Taolun extends Component {
 
     _renderItem = (item) => {
         return (
+            <TouchableHighlight
+                onPress={()=>this._onItemClick(item)}
+                underlayColor="#B5B5B5"  //点击后颜色
+            >
             <View style={{height: 120, backgroundColor: 'white'}}>
                 <View style={{flexDirection: 'row', marginTop: 7, alignItems: 'center'}}>
                     <Image source={require('../Configure/Resource/kk.png')} style={{marginLeft: 10}}/>
@@ -88,8 +92,14 @@ export default class Taolun extends Component {
                     </Text>
                 </Text>
             </View>
+            </TouchableHighlight>
         );
 
+    }
+    _onItemClick(item) {
+        // alert(item.item.context);
+        console.log(this.props.navigation);
+        this.props.clickCallBack(item);
     }
     _header = () => {
         return <Text style={[styles.txt, {backgroundColor: 'black'}]}>这是头部</Text>;
