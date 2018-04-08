@@ -33,6 +33,7 @@ import Sixin from "./TronClass/Me/Sixin";
 import Yjfk from "./TronClass/Me/Yjfk";
 import AboutCk from "./TronClass/Me/AboutCk";
 import DownloadManage from "./TronClass/Me/DownloadManage";
+import HtmlDes from "./TronClass/Activity/HtmlDes";
 
 const Tab = TabNavigator({
     //每一个页面的配置
@@ -169,7 +170,6 @@ const Tab = TabNavigator({
 const Navi = StackNavigator(
     {
         Tab: {screen: Tab},
-
         ClassHome: {screen: ClassHome},
         ClassNotification: {screen: ClassNotification},
         ClassDiscussArea: {screen: ClassDiscussArea},
@@ -181,6 +181,10 @@ const Navi = StackNavigator(
         yjfk: {screen: Yjfk},
         aboutCk: {screen: AboutCk},
         loadManager: {screen: DownloadManage},
+        HtmlDes:{
+            screen:HtmlDes,
+        }
+
     },
     {
         navigationOptions: {

@@ -23,12 +23,11 @@ export default class Qita extends Component {
 
     render() {
         var data = [];
-
-        data.push({key: '1', title: '公告发布', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: '2', title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】更新公告', gTitle: '学前必读：有关课程的特别说明！！！'});
-        data.push({key: '3', title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '有关课程的特别说明'});
-        data.push({key: '4', title: '公告发布', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '2017级统招新生转专业通知'});
-        data.push({key: '5', title: '公告发布', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '关于暑期网络选修课的特别说明'});
+        data.push({key: '1', title: '开课通知', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
+        data.push({key: '2', title: '学习活动开放', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】更新公告', gTitle: '学前必读：有关课程的特别说明！！！'});
+        data.push({key: '3', title: '课程即将开始', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '有关课程的特别说明'});
+        data.push({key: '4', title: '学习活动开放', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '2017级统招新生转专业通知'});
+        data.push({key: '5', title: '学习活动开放', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '关于暑期网络选修课的特别说明'});
         data.push({key: '6', title: '公告发布', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '2017学年第一学期暑假网络课程选课事宜'});
         data.push({key: '7', title: '公告发布', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
         data.push({key: '8', title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});

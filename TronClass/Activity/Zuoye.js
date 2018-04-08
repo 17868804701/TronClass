@@ -24,18 +24,17 @@ export default class Zuoye extends Component {
 
     render() {
         var data = [];
-
-        data.push({key: '1', title: '公告发布', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: '2', title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】更新公告', gTitle: '学前必读：有关课程的特别说明！！！'});
-        data.push({key: '3', title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '有关课程的特别说明'});
-        data.push({key: '4', title: '公告发布', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '2017级统招新生转专业通知'});
-        data.push({key: '5', title: '公告发布', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '关于暑期网络选修课的特别说明'});
-        data.push({key: '6', title: '公告发布', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '2017学年第一学期暑假网络课程选课事宜'});
-        data.push({key: '7', title: '公告发布', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: '8', title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: '9', title: '公告发布', time: '02.07 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: '10', title: '公告更新', time: '02.05 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: '11', title: '公告发布', time: '02.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
+        data.push({key: '1', title: '作业即将截止', time: '03.01 08：44 am', context: '课程【PHP程序设计】的作业', gTitle: '期末大作业',lastContext:'提交即将于2018.05.01截止'});
+        data.push({key: '2', title: '作业开放交付', time: '03.01 08：44 am', context: '课程【移动应用开发（ANDROID）】的作业', gTitle: '第五章课堂练习提交处',lastContext:'已于2018.04.05开放交付'});
+        data.push({key: '3', title: '作业开放交付', time: '03.01 08：44 am', context: '课程【设计模式】的作业', gTitle: '第二章课堂练习提交处',lastContext:'已于2018.04.05开放交付'});
+        data.push({key: '4', title: '作业开放交付', time: '03.01 08：44 am', context: '课程【移动应用开发（ANDROID）】的作业', gTitle: '第一章课堂练习提交处',lastContext:'已于2018.04.05开放交付'});
+        data.push({key: '5', title: '作业开放交付', time: '03.01 08：44 am', context: '课程【移动应用开发（ANDROID）】的作业', gTitle: '用例分析',lastContext:'已于2018.04.05开放交付'});
+        data.push({key: '6', title: '作业开放交付', time: '03.01 08：44 am', context: '课程【移动应用开发（ANDROID）】的作业', gTitle: '广播和服务',lastContext:'已于2018.04.05开放交付'});
+        data.push({key: '7', title: '作业开放交付', time: '03.01 08：44 am', context: '课程【设计模式】的作业', gTitle: '课堂练习提交处',lastContext:'已于2018.04.05开放交付'});
+        data.push({key: '8', title: '作业开放交付', time: '03.01 08：44 am', context: '课程【设计模式】的作业', gTitle: '第十一章课堂练习提交处',lastContext:'已于2018.04.05开放交付'});
+        data.push({key: '9', title: '作业开放交付', time: '02.07 08：44 am', context: '课程【移动应用开发（ANDROID）】的作业', gTitle: '第五章课堂练习提交处',lastContext:'已于2018.04.05开放交付'});
+        data.push({key: '10', title: '作业开放交付', time: '02.05 08：44 am', context: '课程【移动应用开发（ANDROID）】的作业', gTitle: '观察者模式使用练习',lastContext:'已于2018.04.05开放交付'});
+        data.push({key: '11', title: '作业开放交付', time: '02.01 08：44 am', context: '课程【人文视野中的生态学】的作业', gTitle: '第五章课堂练习提交处',lastContext:'已于2018.04.05开放交付'});
         return (
             <View style={{flex: 1,}}>
                 {/*<Button title='滚动到指定位置'*/}
@@ -82,7 +81,9 @@ export default class Zuoye extends Component {
                     marginLeft: 10,
                     marginRight: 10
                 }}>{item.item.context}
-                    <Text style={{color: '#20A1A1'}}>{item.item.gTitle}</Text>
+                    <Text style={{color: '#20A1A1'}}>{item.item.gTitle}
+                        <Text style={{color: '#333333'}}>{item.item.lastContext}</Text>
+                    </Text>
                 </Text>
             </View>
         );

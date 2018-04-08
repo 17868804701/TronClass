@@ -25,17 +25,14 @@ export default class Taolun extends Component {
     render() {
         var data = [];
 
-        data.push({key: '1', title: '公告发布', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: '2', title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】更新公告', gTitle: '学前必读：有关课程的特别说明！！！'});
-        data.push({key: '3', title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '有关课程的特别说明'});
-        data.push({key: '4', title: '公告发布', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '2017级统招新生转专业通知'});
-        data.push({key: '5', title: '公告发布', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '关于暑期网络选修课的特别说明'});
-        data.push({key: '6', title: '公告发布', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '2017学年第一学期暑假网络课程选课事宜'});
-        data.push({key: '7', title: '公告发布', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: '8', title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: '9', title: '公告发布', time: '02.07 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: '10', title: '公告更新', time: '02.05 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: '11', title: '公告发布', time: '02.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
+        data.push({key: '1', title: '新帖子', time: '03.01 08：44 am', name:'王珂',context: '在课程', cName: 'Excel从入门到精通', cContext: '中发布了新帖子'});
+        data.push({key: '2', title: '讨论区开放', time: '03.01 08：44 am', name:'设计模式',context: '的讨论区', gTitle: '工厂方法的模式应用程序阅读',cContext: '已于2017.0405开放'});
+        data.push({key: '3', title: '新帖子', time: '03.01 08：44 am',name:'陈圆圆', context: '在课程', gTitle: 'Excel从入门到精通',cContext: '中发布了新帖子'});
+        data.push({key: '4', title: '新帖子', time: '03.01 08：44 am', name:'张晓军',context: '在课程', gTitle: '操作系统原理',cContext: '中发布了新帖子'});
+        data.push({key: '5', title: '新帖子', time: '03.01 08：44 am', name:'闫文凯',context: '在课程', gTitle: 'Excel从入门到精通',cContext: '中发布了新帖子'});
+        data.push({key: '6', title: '新帖子', time: '03.01 08：44 am', name:'焦雅雯',context: '在课程', gTitle: '设计模式',cContext: '中发布了新帖子'});
+        data.push({key: '7', title: '新帖子', time: '03.01 08：44 am',name:'王璇', context: '在课程', gTitle: 'Excel从入门到精通',cContext: '中发布了新帖子'});
+        data.push({key: '8', title: '新帖子', time: '03.01 08：44 am',name:'韩菲', context: '在课程', gTitle: 'Excel从入门到精通',cContext: '中发布了新帖子'});
         return (
             <View style={{flex: 1,}}>
                 {/*<Button title='滚动到指定位置'*/}
@@ -76,13 +73,19 @@ export default class Taolun extends Component {
                     </View>
                 </View>
                 <Text style={{
-                    color: '#333333',
+                    color: '#20A1A1',
                     fontSize: 16,
                     textAlign: 'left',
                     marginLeft: 10,
                     marginRight: 10
-                }}>{item.item.context}
-                    <Text style={{color: '#20A1A1'}}>{item.item.gTitle}</Text>
+                }}>{item.item.name}
+                    <Text style={{color: '#333333'}}>{item.item.context}
+                        <Text style={{color: '#20A1A1'}}>{item.item.gTitle}
+                            <Text style={{color: '#333333'}}>
+                                {item.item.cContext}
+                            </Text>
+                        </Text>
+                    </Text>
                 </Text>
             </View>
         );
