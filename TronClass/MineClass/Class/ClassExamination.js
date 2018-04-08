@@ -13,6 +13,8 @@ import {
   TextInput
 } from 'react-native';
 
+import MoviePlayer from '../../Common/moviePlayer'
+
 type Props = {};
 export default class ClassExamination extends Component<Props> {
   
@@ -21,37 +23,20 @@ export default class ClassExamination extends Component<Props> {
 	this.state = {};
   }
   
+  static navigationOptions = ({navigation}) => ({
+	header: null
+  });
   
-  _renderItemComponent = ({item})=>{
-	return(
-		<View>
-		  <Text>
-			哈哈哈
-		  </Text>
-		</View>
+  render() {
+	return (
+		<MoviePlayer
+			dismissCallBack={() => {this.dismissVC()}}
+		/>
 	);
   }
   
-  
-  render() {
-	
-	var sections = [];
-	var itemArray = [];
-	
-	itemArray.push({name:'通用讨论区', count:'3'});
-	itemArray.push({name:'学术讨论区', count:'8'});
-	itemArray.push({name:'作业讨论区', count:'30'});
-	itemArray.push({name:'课堂问题讨论区', count:'20'});
-	itemArray.push({name:'其他', count:'4'});
-	
-	sections.push({data: itemArray});
-	
-	return (
-		<SectionList
-			renderItem={this._renderItemComponent}
-			sections={sections}
-		/>
-	);
+  dismissVC() {
+  	this.props.navigation.goBack();
   }
 }
 
@@ -66,5 +51,12 @@ const styles = StyleSheet.create({
 	fontSize: 20,
 	textAlign: 'center',
 	margin: 10,
+  },
+  fullScreen: {
+	position: 'absolute',
+	top: 0,
+	left: 0,
+	bottom: 0,
+	right: 0,
   },
 });

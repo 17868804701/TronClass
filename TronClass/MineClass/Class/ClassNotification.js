@@ -8,7 +8,8 @@ import {
   Text,
   View,
   Image,
-  SectionList
+  SectionList,
+  TouchableOpacity
 } from 'react-native';
 type Props = {};
 export default class Me extends Component<Props> {
@@ -24,23 +25,30 @@ export default class Me extends Component<Props> {
   _renderItemCompent = ({item})=>{
     console.log(item);
 	return(
-		<View style={{backgroundColor:'white'}}>
-		  <View style={{flexDirection: 'row', height: 30, alignItems:'center'}}>
-			<Text style={{fontSize: 15, marginLeft: 10, marginRight: 10}}>
-			  {item.name}
+		<TouchableOpacity onPress={(item)=>{this.pushVC(item)}}>
+		  <View style={{backgroundColor:'white'}}>
+			<View style={{flexDirection: 'row', height: 30, alignItems:'center'}}>
+			  <Text style={{fontSize: 15, marginLeft: 10, marginRight: 10}}>
+				{item.name}
+			  </Text>
+			  <Text style={{fontSize: 14, color: '#20A1A1'}}>
+				{item.status}
+			  </Text>
+			</View>
+			<Text style={{fontSize: 10, marginLeft: 10, marginRight: 10, height: 20, color:'gray'}}>
+			  {item.time}
 			</Text>
-			<Text style={{fontSize: 14, color: '#20A1A1'}}>
-			  {item.status}
+			<Text style={{fontSize: 15, marginLeft: 10, marginRight: 10, marginBottom: 10}}>
+			  {item.content}
 			</Text>
 		  </View>
-		  <Text style={{fontSize: 10, marginLeft: 10, marginRight: 10, height: 20, color:'gray'}}>
-			{item.time}
-		  </Text>
-		  <Text style={{fontSize: 15, marginLeft: 10, marginRight: 10, marginBottom: 10}}>
-			{item.content}
-		  </Text>
-		</View>
+		</TouchableOpacity>
+		
 	);
+  }
+  
+  pushVC(item) {
+	this.props.navigation.navigate('HtmlDes', {ClassItem: item.name})
   }
   
   render() {
