@@ -6,6 +6,8 @@ export default class Zuoye extends Component {
 
     constructor(props) {
         super(props);
+        this.props.clickCallBack=null;
+        console.log(this.props.navigation);
     }
 
     refreshing() {

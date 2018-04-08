@@ -34,6 +34,9 @@ import Yjfk from "./TronClass/Me/Yjfk";
 import AboutCk from "./TronClass/Me/AboutCk";
 import DownloadManage from "./TronClass/Me/DownloadManage";
 import HtmlDes from "./TronClass/Activity/HtmlDes";
+import ZuoyeDet from "./TronClass/Activity/ZuoyeDet";
+import CeshiDet from "./TronClass/Activity/CeshiDet";
+import TaolunDet from "./TronClass/Activity/TaolunDet";
 
 const Tab = TabNavigator({
     //每一个页面的配置
@@ -183,7 +186,16 @@ const Navi = StackNavigator(
         loadManager: {screen: DownloadManage},
         HtmlDes:{
             screen:HtmlDes,
-        }
+        },
+        ZuoyeDet:{
+            screen:ZuoyeDet,
+        },
+        CeshiDet:{
+            screen:CeshiDet,
+        },
+        TaolunDet:{
+            screen:TaolunDet,
+        },
 
     },
     {

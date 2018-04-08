@@ -24,8 +24,7 @@ export default class Taolun extends Component {
 
     render() {
         var data = [];
-
-        data.push({key: '1', title: '新帖子', time: '03.01 08：44 am', name:'王珂',context: '在课程', cName: 'Excel从入门到精通', cContext: '中发布了新帖子'});
+        data.push({key: '1', title: '新帖子', time: '03.01 08：44 am', name:'王珂',context: '在课程', gTitle: 'Excel从入门到精通', cContext: '中发布了新帖子'});
         data.push({key: '2', title: '讨论区开放', time: '03.01 08：44 am', name:'设计模式',context: '的讨论区', gTitle: '工厂方法的模式应用程序阅读',cContext: '已于2017.0405开放'});
         data.push({key: '3', title: '新帖子', time: '03.01 08：44 am',name:'陈圆圆', context: '在课程', gTitle: 'Excel从入门到精通',cContext: '中发布了新帖子'});
         data.push({key: '4', title: '新帖子', time: '03.01 08：44 am', name:'张晓军',context: '在课程', gTitle: '操作系统原理',cContext: '中发布了新帖子'});

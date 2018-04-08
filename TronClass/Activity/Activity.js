@@ -54,19 +54,19 @@ export default class Activity extends Component<Props> {
                 <Zuoye
                     tabLabel='作业'
                     clickCallBack={(item) => {
-                        this.pushVC(item)
+                        this.itemZuoye(item)
                     }}
                 />
                 <Ceshi
                     tabLabel='测试'
                     clickCallBack={(item) => {
-                        this.pushVC(item)
+                        this.itemCeshi(item)
                     }}
                 />
                 <Taolun
                     tabLabel='讨论'
                     clickCallBack={(item) => {
-                        this.pushVC(item)
+                        this.itemTaolun(item)
                     }}
                 />
                 <Qita
@@ -82,6 +82,16 @@ export default class Activity extends Component<Props> {
     pushVC(item) {
         // console.log(item);
         this.props.navigation.navigate('HtmlDes', {ClassItem: item.item.title})
+    }
+    itemZuoye(item) {
+        // console.log(item);
+        this.props.navigation.navigate('ZuoyeDet', {ClassItem: item.item.title})
+    }
+    itemCeshi(item) {
+        this.props.navigation.navigate('CeshiDet', {ClassItem: item.item.title})
+    }
+    itemTaolun(item) {
+        this.props.navigation.navigate('TaolunDet', {ClassItem: item.item.title})
     }
 }
 

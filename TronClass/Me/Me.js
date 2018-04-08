@@ -21,7 +21,7 @@ export default class Me extends Component<Props> {
                     style={styles.buttonBg}
                     onPress={() => this.props.navigation.navigate('editInfo')}>
                     <View style={styles.user_info_style}>
-                        <Image style={styles.image_style} source={require('../Configure/Resource/list_icon.png')}/>
+                        <Image style={styles.image_style} source={require('./Img/default_avatar.png')}/>
                         <View style={styles.user_text}>
                             <Text style={styles.textStyleOne}>黄森</Text>
                             <Text>1451020356489@eurasia.edu</Text>
