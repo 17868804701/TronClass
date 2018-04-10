@@ -24,7 +24,6 @@ class Icon extends Component {
     let font = nameArr[1]
     let CustomIcon = iconMap[fontlib]
     if (!CustomIcon) throw new Error('没有找到匹配的font库，请review代码！')
-	console.log(CustomIcon);
 	return (
       <CustomIcon name={font} size={size} color={color}/>
     )

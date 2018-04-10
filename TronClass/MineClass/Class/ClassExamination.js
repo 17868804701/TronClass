@@ -31,12 +31,17 @@ export default class ClassExamination extends Component<Props> {
 	return (
 		<MoviePlayer
 			dismissCallBack={() => {this.dismissVC()}}
+			pushCallBack={() => {this.pushVC()}}
 		/>
 	);
   }
   
   dismissVC() {
   	this.props.navigation.goBack();
+  }
+  
+  pushVC() {
+	this.props.navigation.navigate('ClassMovieExercises', {title:'视频课程提问'});
   }
 }
 

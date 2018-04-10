@@ -25,6 +25,9 @@ import ClassDiscussArea from './TronClass/MineClass/Class/ClassDiscussArea'
 import ClassStudyAnalyse from './TronClass/MineClass/Class/ClassStudyAnalyse'
 import ClassInfo from './TronClass/MineClass/Class/ClassInfo'
 import ClassExamination from './TronClass/MineClass/Class/ClassExamination'
+import ClassMovieExercises from './TronClass/MineClass/Class/ClassMovieExercises'
+import ClassChapter from './TronClass/MineClass/Class/ClassChapter'
+import MovieBasic from './TronClass/MineClass/ClassAllOption/MovieBasic'
 import Discover from './TronClass/Discover/Discover'
 import Activity from './TronClass/Activity/Activity'
 import Me from './TronClass/Me/Me'
@@ -190,6 +193,9 @@ const Navi = StackNavigator(
 	    ClassStudyAnalyse:{screen: ClassStudyAnalyse},
 	    ClassInfo:{screen: ClassInfo},
 	    ClassExamination:{screen: ClassExamination},
+	    ClassMovieExercises:{screen: ClassMovieExercises},
+	    ClassChapter:{screen :ClassChapter},
+	 	MovieBasic:{screen :MovieBasic},
         editInfo: {screen: EditInfo},
         siXin: {screen: Sixin},
         yjfk: {screen: Yjfk},

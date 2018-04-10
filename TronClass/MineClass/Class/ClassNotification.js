@@ -25,7 +25,7 @@ export default class Me extends Component<Props> {
   _renderItemCompent = ({item})=>{
     console.log(item);
 	return(
-		<TouchableOpacity onPress={(item)=>{this.pushVC(item)}}>
+		<TouchableOpacity onPress={()=>{this.pushVC(item)}}>
 		  <View style={{backgroundColor:'white'}}>
 			<View style={{flexDirection: 'row', height: 30, alignItems:'center'}}>
 			  <Text style={{fontSize: 15, marginLeft: 10, marginRight: 10}}>

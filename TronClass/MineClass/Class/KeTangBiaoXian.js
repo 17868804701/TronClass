@@ -37,23 +37,10 @@ export default class KeTangBiaoXian extends Component<Props> {
                         <Text style={{marginLeft:10,fontSize:20,fontWeight:'bold',color:"#333"}}>{name}</Text>
                         <Text style={{marginLeft:10}}>{num}</Text>
                         <Text style={{marginLeft:10}}>{banji}</Text>
-                        <Text style={{marginLeft:10,position:"absolute",top:65,right:20}}>分数：<Text style={{color:"#20a1a1"}}>{score}</Text>分</Text>
+                        <Text style={{marginLeft:10,position:"absolute",top:'60%',right:20}}>分数：<Text style={{color:"#20a1a1"}}>{score}</Text>分</Text>
                     </View>
                 </View>
     };
-    // _sectionComp = (info) => {
-    //     const txt = info.section.key;
-    //     return<TouchableOpacity onPress={()=>{
-    //         info.section.show ==='none'?info.section.show ='flex':info.section.show ='none';
-    //         this.setState({
-    //             sections:this.state.sections
-    //         })
-    //     }}><View style={{ height: 45, textAlign: 'left',borderColor:"#e0e0e0",borderBottomWidth:0, justifyContent:"center",backgroundColor: 'white', color: 'black', fontSize: 14 }}>
-    //         <Text style={{marginLeft:10}}>{txt}</Text>
-    //         <Image source={require('../../../images/down.png')} style={{position:"absolute",right:20,width:25,height:25}}></Image>
-    //     </View>
-    //     </TouchableOpacity>
-    // };
     componentWillMount(){
         const section = [
             {key: "01",data: [{name:"黄森",num:14610801152313,banji:"软件工程 统本软件1401",score:"60"},{name:"黄森",num:14610801152313,banji:"软件工程 统本软件1401",score:"60"},{name:"黄森",num:14610801152313,banji:"软件工程 统本软件1401",score:"60"},{name:"黄森",num:14610801152313,banji:"软件工程 统本软件1401",score:"60"}]},

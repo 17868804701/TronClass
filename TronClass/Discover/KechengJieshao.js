@@ -56,42 +56,16 @@ export default class KechengJieshao extends Component{
                 >
                     <KechengMulu
                         tabLabel='课程目录'
-                        clickCallBack={(item) => {
-                            this.pushVC(item)
-                        }}
                     />
                     <KechengJianjie
                         tabLabel='课程简介'
-                        clickCallBack={(item) => {
-                            this.itemZuoye(item)
-                        }}
                     />
                     <KechengPingJia
                         tabLabel='课程评价'
-                        clickCallBack={(item) => {
-                            this.itemCeshi(item)
-                        }}
                     />
                 </ScrollableTabView>
             </View>
         );
-    }
-
-
-
-    pushVC(item) {
-        // console.log(item);
-        this.props.navigation.navigate('KechengMulu', {ClassItem: item.item.title})
-    }
-    itemZuoye(item) {
-        // console.log(item);
-        this.props.navigation.navigate('ZuoyeDet', {ClassItem: item.item.title})
-    }
-    itemCeshi(item) {
-        this.props.navigation.navigate('CeshiDet', {ClassItem: item.item.title})
-    }
-    itemTaolun(item) {
-        this.props.navigation.navigate('TaolunDet', {ClassItem: item.item.title})
     }
 }
 

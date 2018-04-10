@@ -24,7 +24,6 @@ const header = {
 }
 
 const movieDetailUrl = 'https://ticket-api-m.mtime.cn/movie/detail.api?locationId=290&movieId=125805'
-
 const playerHeight = 250
 
 export default class MoviePlayer extends Component {
@@ -32,7 +31,8 @@ export default class MoviePlayer extends Component {
   constructor(props) {
     super(props)
     this.player = null
-	this.props.dismissCallBack=null
+	this.props.dismissCallBack=null //点击返回的回调，切换横竖屏和返回
+	this.props.pushCallBack=null //确认答题回调
     this.state = {
       rate: 1,
       slideValue: 0.00,
@@ -45,7 +45,8 @@ export default class MoviePlayer extends Component {
       isLock: false,
       movieInfo: {},
       orientation: null,
-      specificOrientation: null
+      specificOrientation: null,
+	  timeArray: [5]
     }
   }
 
@@ -72,7 +73,7 @@ export default class MoviePlayer extends Component {
         console.log(error)
       })
       .done()
-
+	
     Orientation.addOrientationListener(this._updateOrientation)
     Orientation.addSpecificOrientationListener(this._updateSpecificOrientation)
   }
@@ -100,6 +101,24 @@ export default class MoviePlayer extends Component {
       currentTime: data.currentTime,
       modalVisible: false
     })
+	if (parseInt(this.state.currentTime) == this.state.timeArray[0]) {
+	  console.log(parseInt(this.state.currentTime));
+	  console.log('相等');
+	  //删除时间
+	  this.play();
+	  var oldTimeArray = this.state.timeArray;
+	  var newTimeArray = oldTimeArray;
+	  
+	  newTimeArray.splice(0,1);
+	  
+	  this.setState({
+		timeArray:newTimeArray
+	  });
+	  
+	  console.log(this.state.timeArray)
+	  
+	  this.props.pushCallBack();
+	}
   }
 
   onEnd(data) {
@@ -167,7 +186,7 @@ export default class MoviePlayer extends Component {
     return (
       url ? <TouchableOpacity
               style={[styles.movieContainer, {height: orientation === 'PORTRAIT' ? playerHeight : deviceInfo.deviceWidth,
-              marginTop: orientation === 'PORTRAIT' ? Platform.OS === 'ios' ? 20 : 0 : 0}]}
+              marginTop: orientation === 'PORTRAIT' ? Platform.OS === 'ios' ? 0 : 0 : 0}]}
               onPress={() => this.setState({isTouchedScreen: !this.state.isTouchedScreen})}>
         <Video source={{uri: url}}
                ref={ref => this.player = ref}
@@ -193,7 +212,7 @@ export default class MoviePlayer extends Component {
         {
           !isLock ?
             <View style={styles.navContentStyle}>
-              <View style={{flexDirection: 'row', alignItems: commonStyle.center, flex: 1}}>
+              <View style={{marginTop:20,flexDirection: 'row', alignItems: commonStyle.center, flex: 1}}>
                 <TouchableOpacity
                   style={{backgroundColor: commonStyle.clear}}
                   onPress={orientation === 'PORTRAIT' ? () => {this._renderPopVC()} : Orientation.lockToPortrait}>
@@ -201,7 +220,7 @@ export default class MoviePlayer extends Component {
                 </TouchableOpacity>
                 <Text style={{backgroundColor: commonStyle.clear, color: commonStyle.white, marginLeft: 10}}>{title}</Text>
               </View>
-              <View style={{flexDirection: 'row', alignItems: commonStyle.center, justifyContent: commonStyle.between}}>
+              <View style={{marginTop:20,flexDirection: 'row', alignItems: commonStyle.center, justifyContent: commonStyle.between}}>
                 <TouchableOpacity
                   style={styles.navToolBar}
                   onPress={() => alert('切换电视！')}>
