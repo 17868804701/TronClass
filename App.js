@@ -37,6 +37,8 @@ import HtmlDes from "./TronClass/Activity/HtmlDes";
 import ZuoyeDet from "./TronClass/Activity/ZuoyeDet";
 import CeshiDet from "./TronClass/Activity/CeshiDet";
 import TaolunDet from "./TronClass/Activity/TaolunDet";
+import KechengJieshao from "./TronClass/Discover/KechengJieshao";
+import KeTangBiaoXian from "./TronClass/MineClass/Class/KeTangBiaoXian";
 
 const Tab = TabNavigator({
     //每一个页面的配置
@@ -61,7 +63,16 @@ const Tab = TabNavigator({
         screen: Discover,
         navigationOptions: {
             //stackNavigator的属性
-            headerTitle: '发现课程',
+            headerTitle:<View style={{justifyContent:'space-around',flexDirection:'row',alignItems:'center',width:'100%',height:44,}}>
+                <View style={{borderWidth:1, borderColor:"white", height:30,width:160,flexDirection:"row"}}>
+                    <View style={{width:80,height:30,justifyContent:"center",flexDirection:'row',alignItems:"center",backgroundColor:"white"}}>
+                        <Text style={{color:"#1bb6b7",marginTop:-3}}>精选课程</Text>
+                    </View>
+                    <View style={{width:80,height:30,justifyContent:"center",flexDirection:'row',alignItems:"center"}}>
+                        <Text style={{color:"white",marginTop:-3}}>精选课程</Text>
+                    </View>
+                </View>
+            </View>,
             gestureResponseDistance: {horizontal: 300},
             headerBackTitle: null,
             headerStyle: {backgroundColor: '#20A1A1'},//导航栏的样式
@@ -196,7 +207,12 @@ const Navi = StackNavigator(
         TaolunDet:{
             screen:TaolunDet,
         },
-
+        KechengJieshao:{
+            screen:KechengJieshao
+        },
+        KeTangBiaoXian:{
+            screen:KeTangBiaoXian
+        }
     },
     {
         navigationOptions: {

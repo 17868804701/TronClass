@@ -110,6 +110,7 @@ export default class ClassHome extends Component<Props> {
 		  <CommonBox title="课堂" imageName="" bottomCallBack={(data)=>this.pushNextView(data)}/>
 		  <CommonBox title="点名" imageName="" bottomCallBack={(data)=>this.pushNextView(data)}/>
 		  <CommonBox title="学习分析" imageName="" bottomCallBack={(data)=>this.pushNextView(data)}/>
+		  <CommonBox title="课堂表现" imageName="" bottomCallBack={(data)=>this.pushNextView(data)}/>
 		</View>
 	);
   }
@@ -124,7 +125,9 @@ export default class ClassHome extends Component<Props> {
 	  this.props.navigation.navigate('ClassExamination', {title:data})
 	}else if (data == '学习分析') {
 	  this.props.navigation.navigate('ClassStudyAnalyse', {title:data})
-	}else if (data == '课程信息') {
+	}else if (data == '课堂表现') {
+        this.props.navigation.navigate('KeTangBiaoXian')
+    }else if (data == '课程信息') {
       console.log(this.props.navigation);
 	  this.props.navigation.navigate('ClassInfo', {ClassItem: this.props.navigation.state.params.ClassItem})
 	}else{
