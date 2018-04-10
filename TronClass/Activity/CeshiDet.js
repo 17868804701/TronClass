@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Dimensions, Image, ScrollView, StyleSheet, Text, View} from "react-native";
+import {Dimensions, Image, ScrollView, StyleSheet, Text, TouchableHighlight, View} from "react-native";
 
 // var {width} = Dimensions.get('window').width;
 //获取设备的宽度和高度
@@ -67,11 +67,16 @@ export default class CeshiDet extends Component {
                         <Text style={styles.textStyleTwo}>提交测试</Text>
                     </View>
                     <View style={{height:10,backgroundColor:'#f0f0f0'}}/>
+                    <TouchableHighlight
+                        activeOpacity={0.5} //透明度设置
+                        underlayColor="#FFFFFF"  //点击后颜色
+                        onPress={this.customPress}>
                     <View>
                         <Text style={styles.textStyle}>答题历史</Text>
                         <View style={{height:1,backgroundColor:'#f0f0f0',marginRight:5,marginLeft:5}}/>
                         <Text style={styles.textStyle}>2016.11.02 12:34</Text>
                     </View>
+                    </TouchableHighlight>
                     <View style={{height:10,backgroundColor:'#f0f0f0'}}/>
                 </ScrollView>
                 <View style={{backgroundColor: '#555555', height: 0.5}}/>
@@ -86,6 +91,9 @@ export default class CeshiDet extends Component {
                 </Text>
             </View>
         );
+    }
+    customPress=()=>{
+        this.props.navigation.navigate('Dati')
     }
 }
 

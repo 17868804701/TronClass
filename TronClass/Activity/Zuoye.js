@@ -74,7 +74,7 @@ export default class Zuoye extends Component {
             >
             <View style={{height: 120, backgroundColor: 'white'}}>
                 <View style={{flexDirection: 'row', marginTop: 7, alignItems: 'center'}}>
-                    <Image source={require('../Configure/Resource/kk.png')} style={{marginLeft: 10}}/>
+                    <Image source={require('../Configure/Resource/ic_zuoye.png')} style={{marginLeft: 10,width:50,height:50}}/>
                     <View style={{marginLeft: 7}}>
                         <Text style={{color: '#333333'}}>{item.item.title}</Text>
                         <Text style={{marginTop: 5}}>{item.item.time}</Text>
@@ -82,7 +82,7 @@ export default class Zuoye extends Component {
                 </View>
                 <Text style={{
                     color: '#333333',
-                    fontSize: 16,
+                    fontSize: 15,
                     textAlign: 'left',
                     marginLeft: 10,
                     marginRight: 10

@@ -40,8 +40,13 @@ import HtmlDes from "./TronClass/Activity/HtmlDes";
 import ZuoyeDet from "./TronClass/Activity/ZuoyeDet";
 import CeshiDet from "./TronClass/Activity/CeshiDet";
 import TaolunDet from "./TronClass/Activity/TaolunDet";
+import Kejian from "./TronClass/Activity/Kejian";
+import Dati from "./TronClass/Activity/Dati";
 import KechengJieshao from "./TronClass/Discover/KechengJieshao";
 import KeTangBiaoXian from "./TronClass/MineClass/Class/KeTangBiaoXian";
+import ClassMovieExercises from "./TronClass/MineClass/Class/ClassMovieExercises";
+import ClassChapter from "./TronClass/MineClass/Class/ClassChapter";
+import MovieBasic from "./TronClass/MineClass/ClassAllOption/FileView";
 
 const Tab = TabNavigator({
     //每一个页面的配置
@@ -218,6 +223,12 @@ const Navi = StackNavigator(
         },
         KeTangBiaoXian:{
             screen:KeTangBiaoXian
+        },
+        Kejian:{
+            screen:Kejian,
+        },
+        Dati:{
+            screen:Dati,
         }
     },
     {
