@@ -10,10 +10,9 @@ import {
   View,
   Image,
   SectionList,
-  TextInput
+  TextInput,
+  TouchableOpacity
 } from 'react-native';
-
-import MoviePlayer from '../../Common/moviePlayer'
 
 type Props = {};
 export default class ClassExamination extends Component<Props> {
@@ -24,24 +23,33 @@ export default class ClassExamination extends Component<Props> {
   }
   
   static navigationOptions = ({navigation}) => ({
-	header: null
+	headerTitle:'测试'
   });
   
   render() {
 	return (
-		<MoviePlayer
-			dismissCallBack={() => {this.dismissVC()}}
-			pushCallBack={() => {this.pushVC()}}
-		/>
+		this._renderCell()
 	);
   }
   
-  dismissVC() {
-  	this.props.navigation.goBack();
+  _renderCell() {
+    
+    return(
+		<TouchableOpacity onPress={()=>{this.clickCell()}}>
+		  <View style={{justifyContent:'center', backgroundColor:'white', height:60}}>
+			<Text style={{marginLeft: 10, fontSize: 17}}>
+			  数据类型运算符与表达式
+			</Text>
+			<Text style={{marginTop:5, fontSize:14, marginLeft: 10}}>
+			  未交：42 已交：0
+			</Text>
+		  </View>
+		</TouchableOpacity>
+	);
   }
   
-  pushVC() {
-	this.props.navigation.navigate('ClassMovieExercises', {title:'视频课程提问'});
+  clickCell() {
+    this.props.navigation.navigate('AnswerResult')
   }
 }
 

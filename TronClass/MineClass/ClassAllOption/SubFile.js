@@ -174,11 +174,12 @@ export default class SubFile extends Component<Props> {
   clickItemAction(item) {
 	// 查看PPT
 	this.setState({animating: true});
-	OpenFileTool.openDoc
-	OpenFileTool.openDoc([{
-	  url:"https://calibre-ebook.com/downloads/demos/demo.docx",
-	  fileNameOptional:"test fileName"
-	}],(error,url)=>{
+	if (Platform.OS==='ios') {
+	  OpenFileTool.openDoc
+	  OpenFileTool.openDoc([{
+		url:"https://calibre-ebook.com/downloads/demos/demo.docx",
+		fileNameOptional:"test fileName"
+	  }],(error,url)=>{
 		if (error) {
 		  this.setState({animating: false});
 		  console.log(error);
@@ -186,8 +187,24 @@ export default class SubFile extends Component<Props> {
 		  this.setState({animating: false});
 		  console.log(url);
 		}
-	})
-	
+	  })
+	} else {
+	  OpenFileTool.openDoc
+	  OpenFileTool.openDoc([{
+		url:"https://calibre-ebook.com/downloads/demos/demo.docx",
+		fileNameOptional:"test fileName",
+		cache:false,
+		fileType:'docx'
+	  }],(error,url)=>{
+		if (error) {
+		  this.setState({animating: false});
+		  console.log(error);
+		} else {
+		  this.setState({animating: false});
+		  console.log(url);
+		}
+	  })
+	}
   }
   
   render() {

@@ -28,6 +28,7 @@ import ClassExamination from './TronClass/MineClass/Class/ClassExamination'
 import ClassMovieExercises from './TronClass/MineClass/Class/ClassMovieExercises'
 import ClassChapter from './TronClass/MineClass/Class/ClassChapter'
 import MovieBasic from './TronClass/MineClass/ClassAllOption/MovieBasic'
+import AnswerResult from './TronClass/MineClass/Class/AnswerResult'
 import Discover from './TronClass/Discover/Discover'
 import Activity from './TronClass/Activity/Activity'
 import Me from './TronClass/Me/Me'
@@ -44,9 +45,6 @@ import Kejian from "./TronClass/Activity/Kejian";
 import Dati from "./TronClass/Activity/Dati";
 import KechengJieshao from "./TronClass/Discover/KechengJieshao";
 import KeTangBiaoXian from "./TronClass/MineClass/Class/KeTangBiaoXian";
-import ClassMovieExercises from "./TronClass/MineClass/Class/ClassMovieExercises";
-import ClassChapter from "./TronClass/MineClass/Class/ClassChapter";
-import MovieBasic from "./TronClass/MineClass/ClassAllOption/FileView";
 
 const Tab = TabNavigator({
     //每一个页面的配置
@@ -201,6 +199,7 @@ const Navi = StackNavigator(
 	    ClassMovieExercises:{screen: ClassMovieExercises},
 	    ClassChapter:{screen :ClassChapter},
 	 	MovieBasic:{screen :MovieBasic},
+	    AnswerResult:{screen: AnswerResult},
         editInfo: {screen: EditInfo},
         siXin: {screen: Sixin},
         yjfk: {screen: Yjfk},
