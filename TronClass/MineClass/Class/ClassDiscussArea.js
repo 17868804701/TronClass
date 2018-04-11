@@ -8,8 +8,10 @@ import {
   StyleSheet,
   Text,
   View,
+  Alert,
   Image,
-  SectionList
+  SectionList,
+	TouchableOpacity
 } from 'react-native';
 
 type Props = {};
@@ -21,12 +23,14 @@ export default class ClassDiscussArea extends Component<Props> {
   }
   
   static navigationOptions = ({navigation})=> ({
-	
 	headerTitle: '讨论区'
   })
   
   _renderItemComponent = ({item})=>{
 	return(
+	<TouchableOpacity onPress={()=>{
+        this.props.navigation.navigate('TaoLuninfo')
+	}}>
 		<View style={{backgroundColor: 'white', height:50, flexDirection:'row', alignItems:'flex-start'}}>
 		  
 		  <Image style={{width:25, height:25, marginTop: 10, marginLeft: 10, marginRight: 10}} source={{uri:'class_discuss'}}/>
@@ -41,6 +45,7 @@ export default class ClassDiscussArea extends Component<Props> {
 		  </View>
 		  
 		</View>
+	</TouchableOpacity>
 	);
   }
   

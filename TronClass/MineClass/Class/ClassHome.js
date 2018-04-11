@@ -123,7 +123,11 @@ export default class ClassHome extends Component<Props> {
 	  this.props.navigation.navigate('ClassDiscussArea', {title:data})
 	} else if (data == '测试') {
 	  this.props.navigation.navigate('ClassExamination', {title:data})
-	}else if (data == '学习分析') {
+	} else if (data == '课堂') {
+        this.props.navigation.navigate('KeTang')
+    } else if (data == '课件') {
+        this.props.navigation.navigate('KeJian')
+    }else if (data == '学习分析') {
 	  this.props.navigation.navigate('ClassStudyAnalyse', {title:data})
 	}else if (data == '课堂表现') {
         this.props.navigation.navigate('KeTangBiaoXian')

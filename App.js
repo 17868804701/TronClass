@@ -42,6 +42,10 @@ import CeshiDet from "./TronClass/Activity/CeshiDet";
 import TaolunDet from "./TronClass/Activity/TaolunDet";
 import KechengJieshao from "./TronClass/Discover/KechengJieshao";
 import KeTangBiaoXian from "./TronClass/MineClass/Class/KeTangBiaoXian";
+import TaoLuninfo from "./TronClass/MineClass/Class/TaoLuninfo";
+import KeTang from "./TronClass/MineClass/Class/KeTang";
+import KeTangInfo from "./TronClass/MineClass/Class/KeTangInfo";
+import KeJian from "./TronClass/MineClass/Class/KeJian";
 
 const Tab = TabNavigator({
     //每一个页面的配置
@@ -213,11 +217,23 @@ const Navi = StackNavigator(
         TaolunDet:{
             screen:TaolunDet,
         },
+        TaoLuninfo:{
+            screen:TaoLuninfo,
+        },
         KechengJieshao:{
             screen:KechengJieshao
         },
         KeTangBiaoXian:{
             screen:KeTangBiaoXian
+        },
+        KeTang:{
+            screen:KeTang
+        },
+        KeTangInfo:{
+            screen:KeTangInfo
+        },
+        KeJian:{
+            screen:KeJian
         }
     },
     {

@@ -170,7 +170,7 @@ export default class SubFile extends Component<Props> {
 	})
 	this.setState({sectionArray: sections});
   }
-  
+
   clickItemAction(item) {
 	// 查看PPT
 	this.setState({animating: true});
@@ -187,9 +187,9 @@ export default class SubFile extends Component<Props> {
 		  console.log(url);
 		}
 	})
-	
+
   }
-  
+
   render() {
 	var sections = this.state.sectionArray;
 	return (
