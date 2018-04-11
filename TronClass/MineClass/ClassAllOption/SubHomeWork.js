@@ -17,6 +17,9 @@ type Props = {};
 export default class SubHomeWork extends Component<Props> {
   constructor(props) {
 	super(props);
+	
+	this.props.clickHWCallBack=null;
+	
 	this.state = {
 	  sectionArray: []
 	};
@@ -28,73 +31,58 @@ export default class SubHomeWork extends Component<Props> {
 	var itemArray2 = [];
 	var itemArray3 = [];
 	itemArray1.push({
-	  type: 'A',
-	  name: '初识Java',
+	  type: 'HomeWork',
+	  name: '【课堂练习】求e近似值',
 	  display: 'flex',
 	  iconPath: 'message',
 	  key: '1'
 	});
+	itemArray1.push({
+	  type: 'HomeWork',
+	  name: '【第5周编程题】分队列',
+	  display: 'flex',
+	  iconPath: 'message',
+	  key: '2'
+	});
+	itemArray1.push({
+	  type: 'HomeWork',
+	  name: '【第4周编程题】求e近似值',
+	  display: 'flex',
+	  iconPath: 'message',
+	  key: '3'
+	});
 	
 	itemArray2.push({
-	  type: 'A',
-	  name: 'JDK下程序开发',
+	  type: 'HomeWork',
+	  name: '单元测试---数据类型、运算符表达式',
 	  display: 'flex',
 	  iconPath: 'message',
 	  key: '4'
 	});
 	itemArray2.push({
-	  type: 'A',
-	  name: 'eclipse工具下开发程序',
+	  type: 'HomeWork',
+	  name: '课堂操作案例文案',
 	  display: 'flex',
 	  iconPath: 'message',
 	  key: '5'
-	});
-	itemArray2.push({
-	  type: 'A',
-	  name: 'webstorm等工具使用',
-	  display: 'flex',
-	  iconPath: 'message',
-	  key: '6'
-	});
-	
-	itemArray3.push({
-	  type: 'A',
-	  name: 'Java小游戏开发',
-	  display: 'flex',
-	  iconPath: 'message',
-	  key: '7'
-	});
-	itemArray3.push({
-	  type: 'A',
-	  name: 'Java环境搭建',
-	  display: 'flex',
-	  iconPath: 'message',
-	  key: '8'
 	});
 	
 	
 	sectionArray.push({
 	  data: itemArray1,
-	  title: '第1章 初识JAVA',
+	  title: '模块3：结构化程序设计',
 	  display: 'flex',
 	  iconName: 'arrowup',
 	  key: 'S1'
 	});
 	sectionArray.push({
 	  data: itemArray2,
-	  title:'第2章 简单JAVA程序开发',
+	  title:'模块2：数据类型及表达式',
 	  display:'flex',
 	  iconName: 'arrowup',
 	  key:'S2'
 	});
 	
-	sectionArray.push({
-	  data: itemArray3,
-	  title:'第3章 JAVA进阶学习',
-	  display:'flex',
-	  iconName: 'arrowup',
-	  key:'S3'
-	});
 	this.setState({sectionArray: sectionArray})
   }
   
@@ -102,30 +90,22 @@ export default class SubHomeWork extends Component<Props> {
 	headerTitle: navigation.state.params.title
   });
   
-  _renderItemCompent = ({item}) => {
-	var currentSection = null;
-	this.state.sectionArray.map((section) => {
-	  section.data.map((tmp) => {
-		if (tmp.key == item.key) {
-		  currentSection = section;
-		}
-	  })
-	})
+  _renderItemCompent = (info) => {
 	return (
 		<TouchableOpacity onPress={() => {
-		  this.clickItemAction(item)
+		  this.clickItemAction(info.item)
 		}}>
 		  <View style={{
 			backgroundColor: 'white',
 			height: 30,
 			flexDirection: 'row',
 			alignItems: 'center',
-			display: currentSection.display
+			display: info.section.display
 		  }}>
 			<Image style={{width: 20, height: 20, marginRight: 10, marginLeft: 20}}
-				   source={{uri:item.iconPath}}/>
+				   source={{uri:info.item.iconPath}}/>
 			<Text>
-			  {item.name}
+			  {info.item.name}
 			</Text>
 		  </View>
 		</TouchableOpacity>
@@ -166,7 +146,11 @@ export default class SubHomeWork extends Component<Props> {
   }
   
   clickItemAction(item) {
-	// 点击了外层section中的item    此item可能是sectionHeader，也可能是独立的item
+	if (this.props.clickHWCallBack == null) {
+	  return;
+	} else {
+	  this.props.clickHWCallBack();
+	}
   }
   
   render() {

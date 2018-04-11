@@ -104,7 +104,6 @@ export default class SubMovie extends Component<Props> {
   });
   
   _renderItemCompent = (info) => {
-	
 	return (
 		<TouchableOpacity onPress={() => {
 		  this.clickItemAction(info.item)

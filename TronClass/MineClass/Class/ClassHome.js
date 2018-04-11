@@ -136,6 +136,8 @@ export default class ClassHome extends Component<Props> {
 	  this.props.navigation.navigate('ClassInfo', {ClassItem: this.props.navigation.state.params.ClassItem})
 	}else if (data == '章节') {
 	  this.props.navigation.navigate('ClassChapter', {ClassItem: this.props.navigation.state.params.ClassItem})
+	}else if (data == '作业') {
+	  this.props.navigation.navigate('ClassHW')
 	}else{
       return;
 	}

@@ -27,7 +27,11 @@ import ClassInfo from './TronClass/MineClass/Class/ClassInfo'
 import ClassExamination from './TronClass/MineClass/Class/ClassExamination'
 import ClassMovieExercises from './TronClass/MineClass/Class/ClassMovieExercises'
 import ClassChapter from './TronClass/MineClass/Class/ClassChapter'
+import ClassHW from './TronClass/MineClass/Class/ClassHW'
+import TestExamination from './TronClass/MineClass/Class/TestExamination'
 import MovieBasic from './TronClass/MineClass/ClassAllOption/MovieBasic'
+import AnswerResult from './TronClass/MineClass/Class/AnswerResult'
+import HWDetail from './TronClass/MineClass/Class/HWDetail'
 import Discover from './TronClass/Discover/Discover'
 import Activity from './TronClass/Activity/Activity'
 import Me from './TronClass/Me/Me'
@@ -201,7 +205,11 @@ const Navi = StackNavigator(
 	    ClassExamination:{screen: ClassExamination},
 	    ClassMovieExercises:{screen: ClassMovieExercises},
 	    ClassChapter:{screen :ClassChapter},
+	    ClassHW:{screen: ClassHW},
+	  	TestExamination:{screen: TestExamination},
 	 	MovieBasic:{screen :MovieBasic},
+	    AnswerResult:{screen: AnswerResult},
+	  	HWDetail:{screen: HWDetail},
         editInfo: {screen: EditInfo},
         siXin: {screen: Sixin},
         yjfk: {screen: Yjfk},

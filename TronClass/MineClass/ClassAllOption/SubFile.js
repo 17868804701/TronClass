@@ -108,30 +108,22 @@ export default class SubFile extends Component<Props> {
 	headerTitle: navigation.state.params.title
   });
   
-  _renderItemCompent = ({item}) => {
-	var currentSection = null;
-	this.state.sectionArray.map((section) => {
-	  section.data.map((tmp) => {
-		if (tmp.key == item.key) {
-		  currentSection = section;
-		}
-	  })
-	})
+  _renderItemCompent = (info) => {
 	return (
 		<TouchableOpacity onPress={() => {
-		  this.clickItemAction(item)
+		  this.clickItemAction(info.item)
 		}}>
 		  <View style={{
 			backgroundColor: 'white',
 			height: 30,
 			flexDirection: 'row',
 			alignItems: 'center',
-			display: currentSection.display
+			display: info.section.display
 		  }}>
 			<Image style={{width: 20, height: 20, marginRight: 10, marginLeft: 20}}
-				   source={{uri:item.iconPath}}/>
+				   source={{uri:info.item.iconPath}}/>
 			<Text>
-			  {item.name}
+			  {info.item.name}
 			</Text>
 		  </View>
 		</TouchableOpacity>

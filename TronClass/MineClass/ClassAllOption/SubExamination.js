@@ -1,6 +1,7 @@
 /**
- * Created by qismsom on 2018/4/9.
+ * Created by qismsom on 2018/4/11.
  */
+
 import React, {Component} from 'react';
 import {
   Platform,
@@ -11,13 +12,17 @@ import {
   TouchableOpacity,
   SectionList
 } from 'react-native';
+
 var Dimensions = require('Dimensions');
 var {width, height} = Dimensions.get('window');
 type Props = {};
-export default class ClassMovieExercises extends Component<Props> {
+
+export default class SubExamination extends Component<Props> {
   constructor(props) {
 	super(props);
-	this.props.clickCallBack=null;
+	
+	this.props.clickExaminationCallBack = null;
+	
 	this.state = {
 	  sectionArray: []
 	};
@@ -29,50 +34,28 @@ export default class ClassMovieExercises extends Component<Props> {
 	var itemArray2 = [];
 	var itemArray3 = [];
 	itemArray1.push({
-	  type: 'A',
-	  name: '初识Java',
+	  type: 'Examination',
+	  name: '数据类型运算符与表达式',
 	  display: 'flex',
 	  iconPath: 'message',
 	  key: '1'
 	});
- 
+	
 	itemArray2.push({
-	  type: 'A',
-	  name: 'JDK下程序开发',
+	  type: 'Examination',
+	  name: '数据类型运算符与表达式',
 	  display: 'flex',
 	  iconPath: 'message',
 	  key: '4'
 	});
-	itemArray2.push({
-	  type: 'A',
-	  name: 'eclipse工具下开发程序',
-	  display: 'flex',
-	  iconPath: 'message',
-	  key: '5'
-	});
-	itemArray2.push({
-	  type: 'A',
-	  name: 'webstorm等工具使用',
-	  display: 'flex',
-	  iconPath: 'message',
-	  key: '6'
-	});
- 
+	
 	itemArray3.push({
-	  type: 'A',
-	  name: 'Java小游戏开发',
+	  type: 'Examination',
+	  name: '数据类型运算符与表达式',
 	  display: 'flex',
 	  iconPath: 'message',
 	  key: '7'
 	});
-	itemArray3.push({
-	  type: 'A',
-	  name: 'Java环境搭建',
-	  display: 'flex',
-	  iconPath: 'message',
-	  key: '8'
-	});
-	
 	
 	sectionArray.push({
 	  data: itemArray1,
@@ -88,7 +71,7 @@ export default class ClassMovieExercises extends Component<Props> {
 	  iconName: 'arrowup',
 	  key:'S2'
 	});
-
+	
 	sectionArray.push({
 	  data: itemArray3,
 	  title:'第3章 JAVA进阶学习',
@@ -104,7 +87,6 @@ export default class ClassMovieExercises extends Component<Props> {
   });
   
   _renderItemCompent = (info) => {
-	
 	return (
 		<TouchableOpacity onPress={() => {
 		  this.clickItemAction(info.item)
@@ -125,10 +107,10 @@ export default class ClassMovieExercises extends Component<Props> {
 		</TouchableOpacity>
 	);
   }
-  _renderSectionHeaderComponent = (info) => {
+  _renderSectionHeaderComponent = ({section}) => {
 	return (
 		<TouchableOpacity onPress={() => {
-		  this.clickSectionHeaderAction(info.section)
+		  this.clickSectionHeaderAction(section)
 		}}>
 		  <View style={{
 			flexDirection: 'row',
@@ -138,10 +120,10 @@ export default class ClassMovieExercises extends Component<Props> {
 			height: 40
 		  }}>
 			<Text style={{marginLeft: 10,}}>
-			  {info.section.title}
+			  {section.title}
 			</Text>
 			<Image style={{width: 20, height: 20, marginRight: 10}}
-				   source={{uri:info.section.iconName}}/>
+				   source={{uri:section.iconName}}/>
 		  </View>
 		</TouchableOpacity>
 	);
@@ -149,18 +131,22 @@ export default class ClassMovieExercises extends Component<Props> {
   
   clickSectionHeaderAction(section) {
 	// 点击外层section的header     根据section下的数组判断是否展开合并
-	
-	section.display = (section.display == 'none') ? 'flex' : 'none';
-	section.iconName = (section.iconName == 'arrowup') ? 'arrowdown' : 'arrowup';
-	this.setState({sectionArray: this.state.sectionArray});
+	let sections = this.state.sectionArray.map((tmp) => {
+	  if (tmp.key === section.key) {
+		tmp.display = (tmp.display == 'none') ? 'flex' : 'none';
+		tmp.iconName = (tmp.iconName == 'arrowup') ? 'arrowdown' : 'arrowup';
+	  }
+	  return tmp;
+	})
+	this.setState({sectionArray: sections});
   }
   
   clickItemAction(item) {
-	// 点击了外层section中的item    此item可能是sectionHeader，也可能是独立的item
-	if (this.props.clickCallBack==null) {
+	// 跳转测试答题结果
+	if (this.props.clickExaminationCallBack == null) {
 	  return;
-	} else {
-	  this.props.clickCallBack();
+	}else {
+	  this.props.clickExaminationCallBack();
 	}
   }
   

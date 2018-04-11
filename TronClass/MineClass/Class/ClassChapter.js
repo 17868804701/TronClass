@@ -17,6 +17,7 @@ import SubFile from '../ClassAllOption/SubFile'
 import SubLink from '../ClassAllOption/SubLink'
 import SubMovie from '../ClassAllOption/SubMovie'
 import SubHomeWork from '../ClassAllOption/SubHomeWork'
+import SubExamination from '../ClassAllOption/SubExamination'
 
 import ScrollableTabView, {DefaultTabBar, ScrollableTabBar} from 'react-native-scrollable-tab-view';
 
@@ -47,8 +48,8 @@ export default class ClassChapter extends Component<Props> {
 		>
 		  <SubAll
 			  tabLabel='全部'
-			  clickCallBack={(item) => {
-				this.pushVC(item)
+			  clickCallBack={() => {
+				this.pushVC()
 			  }}
 		  />
 		  <SubFile
@@ -63,17 +64,30 @@ export default class ClassChapter extends Component<Props> {
 		  />
 		  <SubHomeWork
 			  tabLabel='作业'
+			  clickHWCallBack={()=>{this.pushHWDetail()}}
+		  />
+		  <SubExamination
+			  tabLabel='测试'
+			  clickExaminationCallBack={()=>{this.pushAnswerResult()}}
 		  />
 		</ScrollableTabView>
 	);
   }
   
   pushVC(item) {
-	// console.log(item);
-	this.props.navigation.navigate('HtmlDes', {ClassItem: item.item.title})
+	this.props.navigation.navigate('TestExamination')
   }
   
   pushMovieBasic() {
 	this.props.navigation.navigate('MovieBasic')
   }
+  
+  pushAnswerResult() {
+	this.props.navigation.navigate('AnswerResult')
+  }
+  
+  pushHWDetail() {
+	this.props.navigation.navigate('HWDetail')
+  }
+  
 }
