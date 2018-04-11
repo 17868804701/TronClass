@@ -23,17 +23,13 @@ export default class Qita extends Component {
 
     render() {
         var data = [];
-        data.push({key: '1', title: '开课通知', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: '2', title: '学习活动开放', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】更新公告', gTitle: '学前必读：有关课程的特别说明！！！'});
-        data.push({key: '3', title: '课程即将开始', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '有关课程的特别说明'});
-        data.push({key: '4', title: '学习活动开放', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '2017级统招新生转专业通知'});
-        data.push({key: '5', title: '学习活动开放', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '关于暑期网络选修课的特别说明'});
-        data.push({key: '6', title: '公告发布', time: '03.01 08：44 am', context: '你所在的机构发布了公告', gTitle: '2017学年第一学期暑假网络课程选课事宜'});
-        data.push({key: '7', title: '公告发布', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: '8', title: '公告更新', time: '03.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: '9', title: '公告发布', time: '02.07 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: '10', title: '公告更新', time: '02.05 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
-        data.push({key: '11', title: '公告发布', time: '02.01 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '关于期末考试时间说明'});
+        data.push({key: '1', title: '开课通知', time: '03.01 08：44 am', context: '课程【UMI系统建模与分析】', gTitle: '已于 2017-04-24 开课'});
+        data.push({key: '2', title: '学习活动开放', time: '02.20 08：44 am', context: '课程【PHP程序设计】', gTitle: '参考文件 第十章 网络编程 已于2017.04.27 14:18发布'});
+        data.push({key: '3', title: '课程即将开始', time: '02.18 08：44 am', context: '课程【UMI系统建模与分析】发布公告', gTitle: '将于 2017-04-24 开课'});
+        data.push({key: '4', title: '学习活动开放', time: '02.14 08：44 am', context: '课程【PHP程序设计】', gTitle: '参考文件 数据库管理工具 已于2017.04.27 14:18发布'});
+        data.push({key: '5', title: '学习活动开放', time: '02.12 08：44 am', context: '课程【PHP程序设计】', gTitle: '参考文件 PHP帮助手册 已于2017.04.27 14:18发布'});
+        data.push({key: '9', title: '开课通知', time: '02.07 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '已于 2017-04-24 开课'});
+        data.push({key: '10', title: '课程即将开始', time: '02.05 08：44 am', context: '课程【人文视野中的生态学】发布公告', gTitle: '将于 2017-04-24 开课'});
         return (
             <View style={{flex: 1,}}>
                 {/*<Button title='滚动到指定位置'*/}
@@ -71,7 +67,7 @@ export default class Qita extends Component {
             >
             <View style={{height: 120, backgroundColor: 'white'}}>
                 <View style={{flexDirection: 'row', marginTop: 7, alignItems: 'center'}}>
-                    <Image source={require('../Configure/Resource/kk.png')} style={{marginLeft: 10}}/>
+                    <Image source={require('../Configure/Resource/ic_qita.png')} style={{marginLeft: 10,width:55,height:55}}/>
                     <View style={{marginLeft: 7}}>
                         <Text style={{color: '#333333'}}>{item.item.title}</Text>
                         <Text style={{marginTop: 5}}>{item.item.time}</Text>
@@ -79,7 +75,7 @@ export default class Qita extends Component {
                 </View>
                 <Text style={{
                     color: '#333333',
-                    fontSize: 16,
+                    fontSize: 15,
                     textAlign: 'left',
                     marginLeft: 10,
                     marginRight: 10
@@ -101,7 +97,6 @@ export default class Qita extends Component {
         return <View style={{height: 10, backgroundColor: '#eeeeee'}}/>;
     }
     _onItemClick(item) {
-        // alert(item.item.context);
         console.log(this.props.navigation);
         this.props.clickCallBack(item);
     }

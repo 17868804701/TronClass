@@ -72,7 +72,7 @@ export default class Activity extends Component<Props> {
                 <Qita
                     tabLabel='其他'
                     clickCallBack={(item) => {
-                        this.pushVC(item)
+                        this.itemQita(item)
                     }}
                 />
             </ScrollableTabView>
@@ -92,6 +92,15 @@ export default class Activity extends Component<Props> {
     }
     itemTaolun(item) {
         this.props.navigation.navigate('TaolunDet', {ClassItem: item.item.title})
+    }
+    itemQita(item) {
+        if(item.item.key=='2'||item.item.key=='4'||item.item.key=='5'){
+            this.props.navigation.navigate('Kejian', {ClassItem: item.item.title})
+            // this.props.navigation.navigate('Dati', {ClassItem: item.item.title})
+        }else{
+            this.props.navigation.navigate('ClassHome', {ClassItem: item.item.title})
+        }
+
     }
 }
 

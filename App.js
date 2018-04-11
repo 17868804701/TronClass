@@ -40,6 +40,8 @@ import HtmlDes from "./TronClass/Activity/HtmlDes";
 import ZuoyeDet from "./TronClass/Activity/ZuoyeDet";
 import CeshiDet from "./TronClass/Activity/CeshiDet";
 import TaolunDet from "./TronClass/Activity/TaolunDet";
+import Kejian from "./TronClass/Activity/Kejian";
+import Dati from "./TronClass/Activity/Dati";
 import KechengJieshao from "./TronClass/Discover/KechengJieshao";
 import KeTangBiaoXian from "./TronClass/MineClass/Class/KeTangBiaoXian";
 import TaoLuninfo from "./TronClass/MineClass/Class/TaoLuninfo";
@@ -217,14 +219,17 @@ const Navi = StackNavigator(
         TaolunDet:{
             screen:TaolunDet,
         },
-        TaoLuninfo:{
-            screen:TaoLuninfo,
-        },
         KechengJieshao:{
             screen:KechengJieshao
         },
         KeTangBiaoXian:{
             screen:KeTangBiaoXian
+        },
+        Kejian:{
+            screen:Kejian,
+        },
+        Dati:{
+            screen:Dati,
         },
         KeTang:{
             screen:KeTang

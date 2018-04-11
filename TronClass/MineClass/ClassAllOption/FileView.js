@@ -2,19 +2,9 @@
  * Created by qismsom on 2018/4/10.
  */
 import React, {Component} from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  ScrollView
-} from 'react-native';
-
-import OpenFileTool from 'react-native-doc-viewer';
-var RNFS = require('react-native-fs');
-var SavePath = Platform.OS === 'ios' ? RNFS.MainBundlePath : RNFS.DocumentDirectoryPath;
+import {StyleSheet, View} from 'react-native';
+// var RNFS = require('react-native-fs');
+// var SavePath = Platform.OS === 'ios' ? RNFS.MainBundlePath : RNFS.DocumentDirectoryPath;
 
 type Props = {};
 
