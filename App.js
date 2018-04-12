@@ -29,6 +29,7 @@ import ClassMovieExercises from './TronClass/MineClass/Class/ClassMovieExercises
 import ClassChapter from './TronClass/MineClass/Class/ClassChapter'
 import ClassHW from './TronClass/MineClass/Class/ClassHW'
 import TestExamination from './TronClass/MineClass/Class/TestExamination'
+import StudentList from './TronClass/MineClass/Class/StudentList'
 import MovieBasic from './TronClass/MineClass/ClassAllOption/MovieBasic'
 import AnswerResult from './TronClass/MineClass/Class/AnswerResult'
 import HWDetail from './TronClass/MineClass/Class/HWDetail'
@@ -207,6 +208,7 @@ const Navi = StackNavigator(
 	    ClassChapter:{screen :ClassChapter},
 	    ClassHW:{screen: ClassHW},
 	  	TestExamination:{screen: TestExamination},
+	    StudentList:{screen: StudentList},
 	 	MovieBasic:{screen :MovieBasic},
 	    AnswerResult:{screen: AnswerResult},
 	  	HWDetail:{screen: HWDetail},
@@ -247,7 +249,10 @@ const Navi = StackNavigator(
         },
         KeJian:{
             screen:KeJian
-        }
+        },
+	    TaoLuninfo:{
+          screen: TaoLuninfo
+	    }
     },
     {
         navigationOptions: {

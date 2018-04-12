@@ -34,8 +34,8 @@ class CommonBox extends Component<Props> {
 			marginRight: 1,
 			marginBottom: 1
 		  }}>
-			<Image style={{width: '35%', height: '35%', marginBottom: 10}}
-				   source={require('../../Configure/Resource/faxian.png')}/>
+			<Image style={{width: '25%', height: '25%', marginBottom: 15}}
+					 source={{uri:this.props.imageName}}/>
 			<Text style={{width: '100%', height: '25%', textAlign: 'center'}}>
 			  {this.props.title}
 			</Text>
@@ -49,6 +49,7 @@ class CommonBox extends Component<Props> {
 	this.props.bottomCallBack(data);
   }
 }
+
 type Props = {};
 export default class ClassHome extends Component<Props> {
   constructor(props) {
@@ -100,17 +101,17 @@ export default class ClassHome extends Component<Props> {
   _renderBottomView() {
 	return (
 		<View style={{marginTop: 20, flexDirection: 'row', flexWrap: 'wrap'}}>
-		  <CommonBox title="章节" imageName="" bottomCallBack={(data)=>this.pushNextView(data)}/>
-		  <CommonBox title="公告" imageName="" bottomCallBack={(data)=>this.pushNextView(data)}/>
-		  <CommonBox title="课程信息" imageName="" bottomCallBack={(data)=>this.pushNextView(data)}/>
-		  <CommonBox title="课件" imageName="" bottomCallBack={(data)=>this.pushNextView(data)}/>
-		  <CommonBox title="作业" imageName="" bottomCallBack={(data)=>this.pushNextView(data)}/>
-		  <CommonBox title="测试" imageName="" bottomCallBack={(data)=>this.pushNextView(data)}/>
-		  <CommonBox title="讨论" imageName="" bottomCallBack={(data)=>this.pushNextView(data)}/>
-		  <CommonBox title="课堂" imageName="" bottomCallBack={(data)=>this.pushNextView(data)}/>
-		  <CommonBox title="点名" imageName="" bottomCallBack={(data)=>this.pushNextView(data)}/>
-		  <CommonBox title="学习分析" imageName="" bottomCallBack={(data)=>this.pushNextView(data)}/>
-		  <CommonBox title="课堂表现" imageName="" bottomCallBack={(data)=>this.pushNextView(data)}/>
+		  <CommonBox title="章节" imageName="ch_chapter" bottomCallBack={(data)=>this.pushNextView(data)}/>
+		  <CommonBox title="公告" imageName="ch_noti" bottomCallBack={(data)=>this.pushNextView(data)}/>
+		  <CommonBox title="课程信息" imageName="ch_info" bottomCallBack={(data)=>this.pushNextView(data)}/>
+		  <CommonBox title="课件" imageName="ch_file" bottomCallBack={(data)=>this.pushNextView(data)}/>
+		  <CommonBox title="作业" imageName="homework" bottomCallBack={(data)=>this.pushNextView(data)}/>
+		  <CommonBox title="测试" imageName="ch_examination" bottomCallBack={(data)=>this.pushNextView(data)}/>
+		  <CommonBox title="讨论" imageName="message" bottomCallBack={(data)=>this.pushNextView(data)}/>
+		  <CommonBox title="课堂" imageName="ch_class" bottomCallBack={(data)=>this.pushNextView(data)}/>
+		  <CommonBox title="课堂表现" imageName="ch_classshow" bottomCallBack={(data)=>this.pushNextView(data)}/>
+		  <CommonBox title="成绩" imageName="ch_score" bottomCallBack={(data)=>this.pushNextView(data)}/>
+		  <CommonBox title="学习分析" imageName="ch_analyse" bottomCallBack={(data)=>this.pushNextView(data)}/>
 		</View>
 	);
   }
@@ -128,7 +129,8 @@ export default class ClassHome extends Component<Props> {
     } else if (data == '课件') {
         this.props.navigation.navigate('KeJian')
     }else if (data == '学习分析') {
-	  this.props.navigation.navigate('ClassStudyAnalyse', {title:data})
+	  // this.props.navigation.navigate('ClassStudyAnalyse', {title:data})
+	  this.props.navigation.navigate('StudentList',{name:data,isAnalyse:true})
 	}else if (data == '课堂表现') {
         this.props.navigation.navigate('KeTangBiaoXian')
     }else if (data == '课程信息') {
@@ -138,6 +140,8 @@ export default class ClassHome extends Component<Props> {
 	  this.props.navigation.navigate('ClassChapter', {ClassItem: this.props.navigation.state.params.ClassItem})
 	}else if (data == '作业') {
 	  this.props.navigation.navigate('ClassHW')
+	}else if (data == '成绩') {
+	  this.props.navigation.navigate('StudentList',{name:data,isAnalyse:false})
 	}else{
       return;
 	}
