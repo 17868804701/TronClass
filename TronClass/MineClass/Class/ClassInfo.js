@@ -24,7 +24,7 @@ export default class ClassInfo extends Component<Props> {
   
   static navigationOptions = ({navigation}) => ({
 	headerTitle: navigation.state.params.ClassItem.name
-  })
+  });
   render() {
 	return (
     <ScrollView>
@@ -60,7 +60,6 @@ export default class ClassInfo extends Component<Props> {
                 <Text style={{marginLeft:10}}>年班级</Text>
                 <Text style={{marginRight:10,color:"#333"}}>3  A0000</Text>
             </View>
-
             <View style={styles.list}>
                 <Text style={{marginLeft:10}}>年班级</Text>
                 <Text style={{marginRight:10,color:"#333"}}>3  A0000</Text>
