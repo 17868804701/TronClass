@@ -53,6 +53,7 @@ import TaoLuninfo from "./TronClass/MineClass/Class/TaoLuninfo";
 import KeTang from "./TronClass/MineClass/Class/KeTang";
 import KeTangInfo from "./TronClass/MineClass/Class/KeTangInfo";
 import KeJian from "./TronClass/MineClass/Class/KeJian";
+import Score from "./TronClass/MineClass/Class/Score";
 
 const Tab = TabNavigator({
     //每一个页面的配置
@@ -252,7 +253,10 @@ const Navi = StackNavigator(
         },
 	    TaoLuninfo:{
           screen: TaoLuninfo
-	    }
+	    },
+        Score:{
+            screen: Score
+        }
     },
     {
         navigationOptions: {

@@ -57,7 +57,7 @@ export default class StudentList extends Component<Props> {
 	  this.props.navigation.navigate('ClassStudyAnalyse', {title:item.name})
 	  
 	} else { // 成绩页面
- 
+        this.props.navigation.navigate('Score')
 	}
   }
   
