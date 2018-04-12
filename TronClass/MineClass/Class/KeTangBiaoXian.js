@@ -33,20 +33,20 @@ export default class KeTangBiaoXian extends Component<Props> {
         return <View style={{
             flexDirection: "row",
             justifyContent: "center",
-            height: 100,
+            height: 90,
             alignItems: "center",
             borderBottomWidth: 1,
             borderColor: "#e0e0e0"
         }}>
             <View style={{width: '20%', justifyContent: "center", alignItems: "center"}}>
                 <Image source={require('../../../images/201291893228996.jpg')}
-                       style={{width: 70, height: 70, borderRadius: 35}}></Image>
+                       style={{width: 60, height: 60, borderRadius: 30}}></Image>
             </View>
-            <View style={{width: "80%", height: 100, justifyContent: "center"}}>
-                <Text style={{marginLeft: 10, fontSize: 20, fontWeight: 'bold', color: "#333"}}>{name}</Text>
-                <Text style={{marginLeft: 10}}>{num}</Text>
-                <Text style={{marginLeft: 10}}>{banji}</Text>
-                <Text style={{marginLeft: 10, position: "absolute", top: '60%', right: 20}}>分数：<Text
+            <View style={{width: "80%", height: 90, justifyContent: "center"}}>
+                <Text style={{marginLeft: 10, fontSize: 17, color: "#333"}}>{name}</Text>
+                <Text style={{marginLeft: 10,fontSize:12}}>{num}</Text>
+                <Text style={{marginLeft: 10,fontSize:12}}>{banji}</Text>
+                <Text style={{marginLeft: 10, position: "absolute", top: '62%', right: 20,fontSize:12}}>分数：<Text
                     style={{color: "#20a1a1"}}>{score}</Text>分</Text>
             </View>
         </View>
@@ -96,7 +96,7 @@ export default class KeTangBiaoXian extends Component<Props> {
                     renderItem={this._renderItem}
                     sections={this.state.sections}
                     //设置列表之间的样式，边框
-                    ItemSeparatorComponent={() => <View style={{height: 1, backgroundColor: "#e0e0e0"}}></View>}
+                    ItemSeparatorComponent={() => <View style={{height: 0, backgroundColor: "#e0e0e0"}}></View>}
                     // ListHeaderComponent={() => <View style={{ backgroundColor: '#25B960', alignItems: 'center', height: 30 }}><Text style={{ fontSize: 18, color: '#ffffff' }}>通讯录</Text></View>}
                     // ListFooterComponent={() => <View style={{ backgroundColor: '#20a1a1', alignItems: 'center', height: 20,justifyContent:'center'}}></View>}
                 />

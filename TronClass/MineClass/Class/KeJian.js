@@ -19,12 +19,16 @@ export default class KeJian extends Component {
     }
     static navigationOptions = ({navigation}) => ({
         headerTitle: "课件"
-    })
+    });
     //渲染列表
     _renderItem = (info) => {
         const name = info.item.name;
         const txt = info.section.key;
-        return <TouchableOpacity>
+        return <TouchableOpacity onPress={()=>{
+            if(txt==='视频'){
+            this.props.navigation.navigate('MovieBasic')
+            }
+        }}>
             <View style={{flexDirection: "row", alignItems: "center", height: 42,borderBottomColor:"#e0e0e0",borderBottomWidth:0}}>
                 <Image source={require('../../../images/ppt.png')} style={{height:23,width:23,marginLeft:10 ,display:txt=='PPT'?"flex":"none"}}></Image>
                 <Image source={require('../../../images/shipin.png')} style={{height:23,width:23,marginLeft:11 ,display:txt=='视频'?"flex":"none"}}></Image>
@@ -61,12 +65,12 @@ export default class KeJian extends Component {
                             name: "第一章  java环境搭建",
                         },
                     {
-                        key: '1',
+                        key: '2',
                         img:'../../../images/ppt.png',
                         name: "第二章 java基础 ",
                     },
                     {
-                        key: '1',
+                        key: '3',
                         img:'../../../images/ppt.png',
                         name: "第三章  java数组",
                     }
@@ -76,17 +80,17 @@ export default class KeJian extends Component {
                 key: "PPT",
                 data: [
                         {
-                            key: '5',
+                            key: '4',
                             imgUrl: "../../images/list_icon.png",
                             name: "简介",
                         },
                     {
-                        key: '1',
+                        key: '5',
                         img:'../../../images/ppt.png',
                         name: "入门到精通",
                     },
                     {
-                        key: '1',
+                        key: '6',
                         img:'../../../images/ppt.png',
                         name: "结论",
                     }
@@ -96,17 +100,17 @@ export default class KeJian extends Component {
                 key: "Word",
                 data: [
                     {
-                        key: '5',
+                        key: '7',
                         imgUrl: "../../images/list_icon.png",
                         name: "不可不学的化妆课",
                     },
                     {
-                        key: '1',
+                        key: '8',
                         img:'../../../images/ppt.png',
                         name: "不可不学的化妆课",
                     },
                     {
-                        key: '1',
+                        key: '9',
                         img:'../../../images/ppt.png',
                         name: "不可不学的化妆课",
                     }

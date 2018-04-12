@@ -9,6 +9,7 @@ import {
   View,
   SectionList,
   Image,
+  ScrollView,
   TouchableOpacity
 } from 'react-native';
 type Props = {};
@@ -32,7 +33,7 @@ export default class SectionListTest extends Component {
 		  <Image source={require('../../images/list_icon.png')} style={{height: '100%', width: "100%"}}/>
 		</View>
 		<View style={{width: "50%", height: 100, marginLeft: 10}}>
-		  <View style={{flexDirection: 'column', height: 40, marginTop: 20}}>
+		  <View style={{flexDirection: 'column', height: 40, marginTop: 20,justifyContent:"center"}}>
 			<Text style={{
 			  textAlignVertical: 'center',
 			  backgroundColor: "#ffffff",
@@ -69,8 +70,8 @@ export default class SectionListTest extends Component {
 	const txt = info.section.key;
 	return <View style={{
 	  height: 25,
-	  marginTop: 10,
-	  marginBottom: 10,
+	  marginTop: 5,
+	  marginBottom: 5,
 	  marginLeft: 10,
 	  justifyContent: "center",
 	  borderLeftWidth: 5,
@@ -131,18 +132,20 @@ export default class SectionListTest extends Component {
 	  }
 	];
 	return (
-		
+	<ScrollView>
 		<View style={{flex: 1, backgroundColor: 'white',}}>
 		  <SectionList
 			  renderSectionHeader={this._sectionComp}
 			  renderItem={this._renderItem}
 			  sections={sections}
+			  stickySectionHeadersEnabled={false}
 			  //设置列表之间的样式，边框
 			  ItemSeparatorComponent={() => <View style={{height: 1, backgroundColor: "#e0e0e0"}}></View>}
 			  // ListHeaderComponent={() => <View style={{ backgroundColor: '#25B960', alignItems: 'center', height: 30 }}><Text style={{ fontSize: 18, color: '#ffffff' }}>通讯录</Text></View>}
 			  // ListFooterComponent={() => <View style={{ backgroundColor: '#20a1a1', alignItems: 'center', height: 20,justifyContent:'center'}}></View>}
 		  />
 		</View>
+	</ScrollView>
 	);
   }
 }

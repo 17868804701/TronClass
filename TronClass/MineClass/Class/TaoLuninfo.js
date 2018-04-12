@@ -46,9 +46,9 @@ export default class TaoLuninfo extends Component<Props> {
                             <Text style={{marginLeft: 30}}>{time} day ago</Text>
                         </View>
                     </View>
-                    <View style={{width: "100%", justifyContent: "center",marginTop:10}}>
-                        <Text style={{marginLeft: 15,fontSize:18,fontWeight:"bold"}}>{title}</Text>
-                        <Text style={{marginLeft: 15,fontSize:17,marginTop:5}}>{desc}</Text>
+                    <View style={{width: "95%", justifyContent: "center",marginTop:10,marginLeft:"2.5%"}}>
+                        <Text style={{marginLeft:0,fontSize:18,fontWeight:"bold"}}>{title}</Text>
+                        <Text style={{marginLeft:0,fontSize:17,marginTop:5}}>{desc}</Text>
                     </View>
                </View>
         </TouchableOpacity>
